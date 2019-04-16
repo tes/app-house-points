@@ -16,9 +16,9 @@ export const schools = [
         name: 'Bornean Bearded Pigs',
         avatar: bornean,
         students: [
-          { id: 0, name: 'Harry Trotter', avatar: visayan },
-          { id: 1, name: 'Jason Bournean', avatar: redRiver },
-          { id: 5, name: 'Neville Hogbottom', avatar: wild },
+          { id: 0, name: 'Harry Trotter', avatar: bornean },
+          { id: 1, name: 'Jason Bournean', avatar: bornean },
+          { id: 5, name: 'Neville Hogbottom', avatar: bornean },
         ],
       },
       { 
@@ -27,8 +27,8 @@ export const schools = [
         avatar: visayan,
         students: [
           { id: 0, name: 'Warty McWart-Face', avatar: visayan },
-          { id: 1, name: 'Ron Wartsley', avatar: redRiver },
-          { id: 5, name: 'Sausages Snape', avatar: wild },
+          { id: 1, name: 'Ron Wartsley', avatar: visayan },
+          { id: 5, name: 'Sausages Snape', avatar: visayan },
         ],
       },
       { 
@@ -36,19 +36,19 @@ export const schools = [
         name: 'Red River Hogs',
         avatar: redRiver,
         students: [
-          { id: 0, name: 'David Hameron', avatar: visayan },
+          { id: 0, name: 'David Hameron', avatar: redRiver },
           { id: 1, name: 'John Another-Stupid-Pig-Name Smith', avatar: redRiver },
-          { id: 5, name: 'Hammy the House Elf', avatar: wild },
+          { id: 5, name: 'Hammy the House Elf', avatar: redRiver },
         ],
       },
       { 
         id: 0,
         name: 'Wild Boars',
-        avatar: redRiver,
+        avatar: wild,
         students: [
           { id: 5, name: 'Michelle O-boar-ma', avatar: wild },
-          { id: 0, name: 'Hairy Grainger', avatar: visayan },
-          { id: 1, name: 'Kevin Bacon', avatar: redRiver },
+          { id: 0, name: 'Hairy Grainger', avatar: wild },
+          { id: 1, name: 'Kevin Bacon', avatar: wild },
         ],
       },
     ]
