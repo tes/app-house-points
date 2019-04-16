@@ -6,8 +6,8 @@ import { schools } from './constants';
 export default () => {
   return (
     <Card className="welcome-card">
-      <h1>Welcome to School Points!</h1>
-      <p>This is a simple demo app to show school points</p>
+      <h1>Welcome to House Points!</h1>
+      <p>This is a simple demo app to show a school's house points</p>
       <hr/>
       <h2>Available schools:</h2>
       <List
