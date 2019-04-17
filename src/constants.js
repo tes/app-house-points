@@ -7,7 +7,7 @@ export const schools = [
   {
     id: 'z1',
     onlineId: 1167393,
-    name: 'Warthogs',
+    name: 'Warthogs School of Witchcraft and Wizardry',
     avatar: redRiver,
     points: 0,
     houses: [
