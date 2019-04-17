@@ -14,28 +14,19 @@ export default class School extends Component {
     this.state = { ...school };
   }
 
-  addPoints() {
-    this.setState({ points: this.state.points + 1 })
+  addPoints(item) {
+    const houses = this.state.houses.map((house) => house.id === item.id ? { ...house, points: house.points += 1 } : house);
+    this.setState({ houses });
   }
 
-  removePoints() {
-    this.setState({ points: this.state.points - 1 })
+  removePoints(item) { 
+    const houses = this.state.houses.map((house) => house.id === item.id ? { ...house, points: house.points -= 1 } : house);
+    this.setState({ houses });
   }
 
   render() { 
     return (
       <Card className="schools-points-card" title={<span>{this.state.name} - {this.state.onlineId}</span>}>
-        <Card.Grid style={gridStyle}>
-          <div className="schools-points">
-            <div>
-              <h3><Icon type="star" /> School Points: { this.state.points }</h3>
-            </div>
-            <div className="actions">
-              <Icon type="plus-circle" onClick={() => this.addPoints()} theme="twoTone"/>
-              <Icon type="minus-circle" onClick={() => this.removePoints()} theme="twoTone"/>
-            </div>
-          </div>
-        </Card.Grid>
         <Card.Grid style={gridStyle}>
           <h3><Icon type="home" /> Houses:</h3>
           <List
@@ -47,6 +38,15 @@ export default class School extends Component {
                   title={<a className="house-title">{item.name}</a>}
                   description={
                     <div className="house-description">
+                      <div className="schools-points">
+                        <div>
+                          <h3><Icon type="star" /> Points: { item.points }</h3>
+                        </div>
+                        <div className="actions">
+                          <Icon type="plus-circle" onClick={() => this.addPoints(item)} theme="twoTone"/>
+                          <Icon type="minus-circle" onClick={() => this.removePoints(item)} theme="twoTone"/>
+                        </div>
+                      </div>
                       <h3><Icon type="team" /> Students:</h3>
                       <List
                         dataSource={item.students}

@@ -9,12 +9,12 @@ export const schools = [
     onlineId: 1167393,
     name: 'Warthogs School of Witchcraft and Wizardry',
     avatar: redRiver,
-    points: 0,
     houses: [
       { 
-        id: 0,
+        id: 'b1',
         name: 'Bornean Bearded Pigs',
         avatar: bornean,
+        points: 0,
         students: [
           { id: 0, name: 'Harry Trotter', avatar: bornean },
           { id: 1, name: 'Jason Bournean', avatar: bornean },
@@ -22,9 +22,10 @@ export const schools = [
         ],
       },
       { 
-        id: 0,
+        id: 'v1',
         name: 'Visayan Warty Pigs',
         avatar: visayan,
+        points: 0,
         students: [
           { id: 0, name: 'Warty McWart-Face', avatar: visayan },
           { id: 1, name: 'Ron Wartsley', avatar: visayan },
@@ -32,9 +33,10 @@ export const schools = [
         ],
       },
       { 
-        id: 0,
+        id: 'r1',
         name: 'Red River Hogs',
         avatar: redRiver,
+        points: 0,
         students: [
           { id: 0, name: 'David Hameron', avatar: redRiver },
           { id: 1, name: 'John Another-Stupid-Pig-Name Smith', avatar: redRiver },
@@ -42,9 +44,10 @@ export const schools = [
         ],
       },
       { 
-        id: 0,
+        id: 'w1',
         name: 'Wild Boars',
         avatar: wild,
+        points: 0,
         students: [
           { id: 5, name: 'Michelle O-boar-ma', avatar: wild },
           { id: 0, name: 'Hairy Grainger', avatar: wild },
@@ -58,12 +61,12 @@ export const schools = [
     onlineId: 1083460,
     name: 'ZH20 Transactional',
     avatar: bornean,
-    points: 0,
     houses: [
       { 
-        id: 0,
+        id: 'bl2',
         name: 'Blundell',
         avatar: visayan,
+        points: 0,
         students: [
           { id: 0, name: 'Heather', avatar: visayan },
           { id: 1, name: 'Lisa', avatar: redRiver },
@@ -71,9 +74,10 @@ export const schools = [
         ],
       },
       { 
-        id: 0,
+        id: 'bi2',
         name: 'Bingham',
         avatar: visayan,
+        points: 0,
         students: [
           { id: 0, name: 'Zoe', avatar: visayan },
           { id: 1, name: 'Eddie', avatar: redRiver },
@@ -81,9 +85,10 @@ export const schools = [
         ],
       },
       { 
-        id: 0,
+        id: 'sh2',
         name: 'Shirley',
         avatar: visayan,
+        points: 0,
         students: [
           { id: 0, name: 'Hannah', avatar: visayan },
           { id: 1, name: 'Steph', avatar: redRiver },
@@ -91,9 +96,10 @@ export const schools = [
         ],
       },
       { 
-        id: 0,
+        id: 'gr2',
         name: 'Graham',
         avatar: visayan,
+        points: 0,
         students: [
           { id: 0, name: 'Gregg', avatar: visayan },
           { id: 1, name: 'Hai Lin', avatar: redRiver },
@@ -107,12 +113,12 @@ export const schools = [
     onlineId: 1058690,
     name: 'ZH20 Test School',
     avatar: visayan,
-    points: 0,
     houses: [
       { 
-        id: 0,
+        id: 'b3',
         name: 'The Beatles',
         avatar: visayan,
+        points: 0,
         students: [
           { id: 0, name: 'John', avatar: visayan },
           { id: 1, name: 'Paul', avatar: redRiver },
@@ -121,9 +127,10 @@ export const schools = [
         ],
       },
       { 
-        id: 0,
+        id: 'w3',
         name: 'The Who',
         avatar: visayan,
+        points: 0,
         students: [
           { id: 0, name: 'Roger', avatar: visayan },
           { id: 1, name: 'Pete', avatar: redRiver },
@@ -132,9 +139,10 @@ export const schools = [
         ],
       },
       { 
-        id: 0,
+        id: 'o3',
         name: 'One Direction',
         avatar: visayan,
+        points: 0,
         students: [
           { id: 0, name: 'Harry', avatar: visayan },
           { id: 1, name: 'Niall', avatar: redRiver },
@@ -144,9 +152,10 @@ export const schools = [
         ],
       },
       { 
-        id: 0,
+        id: 's3',
         name: 'The Spice Girls',
         avatar: visayan,
+        points: 0,
         students: [
           { id: 0, name: 'Posh', avatar: visayan },
           { id: 1, name: 'Ginger', avatar: redRiver },
@@ -162,12 +171,12 @@ export const schools = [
     onlineId: 1167393,
     name: 'Zoz School',
     avatar: redRiver,
-    points: 0,
     houses: [
       { 
-        id: 0,
+        id: 'house1',
         name: 'House 1',
         avatar: visayan,
+        points: 0,
         students: [
           { id: 0, name: 'Student 1', avatar: visayan },
           { id: 1, name: 'Student 2', avatar: redRiver },
@@ -175,9 +184,10 @@ export const schools = [
         ],
       },
       { 
-        id: 0,
+        id: 'house2',
         name: 'House 2',
         avatar: visayan,
+        points: 0,
         students: [
           { id: 0, name: 'Student 1', avatar: visayan },
           { id: 1, name: 'Student 2', avatar: redRiver },
@@ -185,9 +195,10 @@ export const schools = [
         ],
       },
       { 
-        id: 0,
+        id: 'house3',
         name: 'House 3',
         avatar: visayan,
+        points: 0,
         students: [
           { id: 0, name: 'Student 1', avatar: visayan },
           { id: 1, name: 'Student 2', avatar: redRiver },

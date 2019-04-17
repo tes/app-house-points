@@ -10,8 +10,8 @@ export default () => {
       }
       onBack={() => null}
       className="page-header"
-      title="School Points"
-      subTitle="This is a subtitle"
+      title="House Points"
+      subTitle=""
     />
   )
 }
