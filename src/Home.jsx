@@ -12,7 +12,6 @@ export default class Home extends Component {
 
   componentWillMount() {
     request('/api/user').then(response => {
-      console.log("WTF WTF WTF", response)
       this.setState({
         ...response,
         loaded: true,
