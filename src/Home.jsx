@@ -12,7 +12,6 @@ export default class Home extends Component {
 
   componentWillMount() {
     request('/api/user').then(response => {
-      console.log("WTF WTF WTF", response)
       this.setState({
         ...response,
         loaded: true,
@@ -22,7 +21,7 @@ export default class Home extends Component {
 
   login(e) {
     e.preventDefault();
-    request('/api/login')
+    request('/auth/login')
   }
 
   render() {
@@ -34,7 +33,7 @@ export default class Home extends Component {
         {
           (() => {
              if (!this.state.loaded) return null
-             if (!this.state.user) return <div><a href="/login" onClick={(e) => this.login(e)} >Login to see your schools</a></div>
+             if (!this.state.user) return <div><a href="/auth/login" onClick={(e) => this.login(e)} >Login to see your schools</a></div>
              if (this.state.schools.length === 0)return <div>None of your schools are entitled to use this application</div>
              else return <div>
                <h2>Available schools:</h2>
