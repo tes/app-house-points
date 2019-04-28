@@ -27,7 +27,7 @@ app.get('/api/login', auth.ensureAuthorised, api.login);
 app.get('/api/schools/:schoolId', auth.ensureAuthorised, auth.hasEntitlement('House Points'), api.getSchool);
 app.post('/api/points/:schoolId/:houseId', auth.ensureAuthorised, auth.hasEntitlement('House Points'), api.addHousePoint);
 app.delete('/api/points/:schoolId/:houseId', auth.ensureAuthorised, auth.hasEntitlement('House Points'), api.subtractHousePoint);
-app.get('/cb', auth.callback);
+app.get('/auth/return', auth.return);
 
 app.use('*', function (req, res, next) {
   res.set('content-type', 'text/html');
