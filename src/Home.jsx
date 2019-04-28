@@ -21,7 +21,7 @@ export default class Home extends Component {
 
   login(e) {
     e.preventDefault();
-    request('/api/login')
+    request('/auth/login')
   }
 
   render() {
