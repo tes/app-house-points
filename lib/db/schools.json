@@ -1,9 +1,4 @@
-import bornean from './images/bornean.jpg';
-import redRiver from './images/redRiver.jpg';
-import visayan from './images/visayan.jpg';
-import wild from './images/wild.jpg';
-
-export const schools = [
+[
   {
     "id": "z1",
     "onlineId": 1083460,
@@ -97,4 +92,4 @@ export const schools = [
       }
     ]
   }
-];
+]

@@ -6,6 +6,7 @@ import School from './School';
 import './App.css';
 
 class App extends Component {
+
   render() {
     return (
       <Router>
@@ -14,7 +15,7 @@ class App extends Component {
           <div className="App">
             <div className="page-content">
               <Route exact path="/" component={Home} />
-              <Route path="/:id" component={School} />            
+              <Route path="/:id" component={School} />
             </div>
           </div>
         </div>
