@@ -1,7 +1,7 @@
 [
   {
     "id": "z1",
-    "onlineId": 1083460,
+    "tesId": 1083460,
     "name": "ZH20 Transactional",
     "houses": [
       {
@@ -32,7 +32,7 @@
   },
   {
     "id": "z2",
-    "onlineId": 1058690,
+    "tesId": 1058690,
     "name": "ZH20 Test School",
     "houses": [
       {
@@ -63,7 +63,7 @@
   },
   {
     "id": "z3",
-    "onlineId": 1167393,
+    "tesId": 1167393,
     "name": "Zoz School",
     "houses": [
       {

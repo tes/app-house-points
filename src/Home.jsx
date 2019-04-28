@@ -11,9 +11,18 @@ export default class Home extends Component {
   }
 
   componentWillMount() {
-    request(`/api/schools`).then(schools => {
-      this.setState({ schools });
+    request('/api/user').then(response => {
+      console.log("WTF WTF WTF", response)
+      this.setState({
+        ...response,
+        loaded: true,
+      });
     }).catch(console.error);
+  }
+
+  login(e) {
+    e.preventDefault();
+    request('/api/login')
   }
 
   render() {
@@ -23,21 +32,26 @@ export default class Home extends Component {
         <p>This is a simple demo app to show a school's house points</p>
         <hr/>
         {
-          this.state.schools ? <div>
-            <h2>Available schools:</h2>
-            <List
-              className="school-list"
-              itemLayout="horizontal"
-              dataSource={[...this.state.schools].sort((a, b) => a.name.localeCompare(b.name))}
-              renderItem={item => (
-                <List.Item actions={[<Link to={`/${item.id}`}>show</Link>]}>
-                  <List.Item.Meta
-                    title={<Link to={`/${item.id}`}>{item.name}</Link>}
-                  />
-                </List.Item>
-              )}
-            />
-          </div> : ''
+          (() => {
+             if (!this.state.loaded) return null
+             if (!this.state.user) return <div><a href="/login" onClick={(e) => this.login(e)} >Login to see your schools</a></div>
+             if (this.state.schools.length === 0)return <div>None of your schools are entitled to use this application</div>
+             else return <div>
+               <h2>Available schools:</h2>
+               <List
+                 className="school-list"
+                 itemLayout="horizontal"
+                 dataSource={[...this.state.schools].sort((a, b) => a.name.localeCompare(b.name))}
+                 renderItem={item => (
+                   <List.Item actions={[<Link to={`/schools/${item.id}`}>show</Link>]}>
+                     <List.Item.Meta
+                       title={<Link to={`/schools/${item.id}`}>{item.name}</Link>}
+                     />
+                   </List.Item>
+                 )}
+               />
+             </div>
+          })()
         }
       </Card>
     )
