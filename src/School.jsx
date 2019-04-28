@@ -46,7 +46,7 @@ export default class School extends Component {
               renderItem={item => (
                 <List.Item key={item.id}>
                   <List.Item.Meta
-                    title={<a className="house-title">{item.name}</a>}
+                    title={item.name}
                     description={
                       <div className="house-description">
                         <div className="schools-points">
