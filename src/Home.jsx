@@ -33,7 +33,7 @@ export default class Home extends Component {
         {
           (() => {
              if (!this.state.loaded) return null
-             if (!this.state.user) return <div><a href="/login" onClick={(e) => this.login(e)} >Login to see your schools</a></div>
+             if (!this.state.user) return <div><a href="/auth/login" onClick={(e) => this.login(e)} >Login to see your schools</a></div>
              if (this.state.schools.length === 0)return <div>None of your schools are entitled to use this application</div>
              else return <div>
                <h2>Available schools:</h2>

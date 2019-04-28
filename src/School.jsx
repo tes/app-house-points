@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Icon, List } from 'antd';
+import { Card, Icon, List, Avatar } from 'antd';
 import request from './request';
 
 const gridStyle = {
@@ -47,6 +47,7 @@ export default class School extends Component {
                 <List.Item key={item.id}>
                   <List.Item.Meta
                     title={item.name}
+                    avatar={<Avatar src={`/images/${item.id}.png`} />}
                     description={
                       <div className="house-description">
                         <div className="schools-points">

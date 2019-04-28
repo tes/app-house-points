@@ -36,26 +36,26 @@
     "name": "ZH20 Test School",
     "houses": [
       {
-        "id": "lennon",
-        "name": "Lennon",
+        "id": "targaryen",
+        "name": "Targaryen",
         "order": 1,
         "points": 0
       },
       {
-        "id": "mccartney",
-        "name": "McCartney",
+        "id": "stark",
+        "name": "Stark",
         "order": 2,
         "points": 0
       },
       {
-        "id": "starr",
-        "name": "Starr",
+        "id": "lannister",
+        "name": "Lannister",
         "order": 3,
         "points": 0
       },
       {
-        "id": "harrison",
-        "name": "Harrison",
+        "id": "baratheon",
+        "name": "Baratheon",
         "order": 4,
         "points": 0
       }
