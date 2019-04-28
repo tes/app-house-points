@@ -12,6 +12,8 @@ app.set('x-powered-by', false);
 app.use(compress());
 app.use(express.static(buildFolder));
 
+app.get('/api/schools', middleware.getEntitledSchools);
+
 app.get('/api/schools/:schoolId', middleware.getSchool);
 
 app.post('/api/points/:schoolId/:houseId', middleware.addHousePoint);

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Icon, List, Avatar } from 'antd';
+import { Card, Icon, List } from 'antd';
 import request from './request';
 
 const gridStyle = {
