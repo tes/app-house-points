@@ -46,7 +46,6 @@ export default class School extends Component {
               renderItem={item => (
                 <List.Item key={item.id}>
                   <List.Item.Meta
-                    avatar={<Avatar src={item.avatar} />}
                     title={<a className="house-title">{item.name}</a>}
                     description={
                       <div className="house-description">
