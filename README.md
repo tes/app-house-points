@@ -30,7 +30,10 @@ When running locally it is easiest to start the the server and client side parts
 npm start
 ```
 ```
-TES_OIDC_CLIENT_ID=app-house-points TES_OIDC_CLIENT_SECRET=replace-with-real-secret TES_OIDC_PROVIDER_URL=replace-with-real-provider-url nodemon server
+TES_OIDC_CLIENT_ID=app-house-points \
+TES_OIDC_CLIENT_SECRET=replace-with-real-secret \
+TES_OIDC_PROVIDER_URL=replace-with-real-provider-url \
+nodemon server
 ```
 
 This should start the client side application on http://localhost:3000 and automatically proxy API and authentication requests to the server running on http://localhost:30001. Both client and server will montitor the filesystem for changes and automatically rebuild.
