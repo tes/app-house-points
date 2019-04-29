@@ -1,68 +1,43 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[House Points](http://tes-house-points.herokuapp.com/) is a public application for demonstrating how approved 3rd party products can integrate with Tes using [OpenId Connect (OIDC)](https://openid.net/connect/).
 
-## Available Scripts
+It demonstrates three scenarios:
 
-In the project directory, you can run:
+1. Unauthenticated users
+2. Authenticated users who not a member of a school that has a House Points subscription
+3. Authenticated users who are a member of one or more schools that have a House Points subscription
 
-### `npm start`
+### Limitations
+The most significant limitation of this demo is that House Points does not have it's own user database. Instead it is fully reliant on tes.com accounts. A real 3rd party application is likely to have existing users, that must somehow be associated with equivalent users on tes.com. There are multiple strategies for attempting this which must be taken on a case by case basis
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Other limitations include:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+* The application assumes that the 3rd party application has a database of schools which have already been associated with tes.com portal accounts via the tes onlineId
+* The application does not confirm the identity of the user if they are already logged on to tes.com 
+* The application does not honour the OIDC token expiry time
+* The application does not honour the entitlements start / end date
 
-### `npm test`
+### Development
+#### Pre Requisits
+* [Node.js](https://nodejs.org/en/) v8 or greater
+* [Nodemon](https://nodemon.io/) (optional)
+* OIDC client credentials
+* Access to the tes.com staging environment
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Starting the application 
+When running locally it is easiest to start the the server and client side parts of the application separately...
+```
+npm start
+```
+```
+TES_OIDC_CLIENT_ID=app-house-points TES_OIDC_CLIENT_SECRET=replace-with-real-secret TES_OIDC_PROVIDER_URL=replace-with-real-provider-url nodemon server
+```
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+This should start the client side application on http://localhost:3000 and automatically proxy API and authentication requests to the server running on http://localhost:30001. Both client and server will montitor the filesystem for changes and automatically rebuild.
 
 ### Deployment
+The application is automatically deployed to [Heroku](https://www.heroku.com/) when changes are pushed to master.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Learn More
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+To learn React, check out the [React documentation](https://reactjs.org/).
