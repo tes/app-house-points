@@ -20,23 +20,24 @@ Other limitations include:
 ### Development
 #### Pre Requisits
 * [Node.js](https://nodejs.org/en/) v8 or greater
-* [Nodemon](https://nodemon.io/) (optional)
 * OIDC client credentials (ask Tes)
 * Access to the tes.com staging and/or production environments
 
+#### Installation
+```
+git clone git@github.com:tes/app-house-points.git
+cd app-house-points
+npm install
+```
+
 #### Starting the application 
-When running locally it is easiest to start the the server and client side parts of the application separately...
-```
-npm start
-```
 ```
 TES_OIDC_CLIENT_ID=app-house-points \
 TES_OIDC_CLIENT_SECRET=replace-with-real-secret \
 TES_OIDC_PROVIDER_URL=replace-with-real-provider-url \
-nodemon server
+npm run dev
 ```
-
-This should start the client side application on http://localhost:3000 and automatically proxy API and authentication requests to the server running on http://localhost:30001. Both client and server will montitor the filesystem for changes and automatically rebuild.
+This should start the client side application on http://localhost:3000 (this may take a little time) and automatically proxy API and authentication requests to the server running on http://localhost:30001. Both client and server will montitor the filesystem for changes and automatically rebuild.
 
 ### Deployment
 The application is automatically deployed to [Heroku](https://www.heroku.com/) when changes are pushed to master.
