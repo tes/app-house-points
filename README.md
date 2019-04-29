@@ -1,3 +1,5 @@
+# House Points
+
 [House Points](http://tes-house-points.herokuapp.com/) is a public application for demonstrating how approved 3rd party products can integrate with Tes using [OpenId Connect (OIDC)](https://openid.net/connect/).
 
 It demonstrates three scenarios:
