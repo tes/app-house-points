@@ -22,7 +22,7 @@ Other limitations include:
 * [Node.js](https://nodejs.org/en/) v8 or greater
 * [Nodemon](https://nodemon.io/) (optional)
 * OIDC client credentials (ask Tes)
-* Access to the tes.com product and/or staging environments
+* Access to the tes.com staging and/or production environments
 
 #### Starting the application 
 When running locally it is easiest to start the the server and client side parts of the application separately...
