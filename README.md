@@ -37,7 +37,7 @@ TES_OIDC_CLIENT_SECRET=replace-with-real-secret \
 TES_OIDC_PROVIDER_URL=replace-with-real-provider-url \
 npm run dev
 ```
-This should start the client side application on http://localhost:3000 (this may take a little time) and automatically proxy API and authentication requests to the server running on http://localhost:30001. Both client and server will montitor the filesystem for changes and automatically rebuild.
+This should start the client side application on http://localhost:3000 (this may take a little time) and automatically proxy API and authentication requests to the server running on http://localhost:3001. Both client and server will monitor the filesystem for changes and automatically rebuild.
 
 ### Deployment
 The application is automatically deployed to [Heroku](https://www.heroku.com/) when changes are pushed to master.
