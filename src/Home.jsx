@@ -5,18 +5,18 @@ import { Store } from './store';
 import request from './request';
 
 export default function Home() {
-  const { state } = useContext(Store);
+  const { state, actions } = useContext(Store);
  
   const login = (e) => {
-    request('/auth/login').catch(console.log);
+    actions.loading(true);
+    request('/auth/login')
+      .catch((err) => console.log(err))
+      .finally(() => actions.loading(false));
   }
 
   const renderSchools = () => {
-    if (!state.loaded) {
-      return null;
-    }
     if (!state.user) {
-      return <Button onClick={() => login()}><Icon type="login" /> Login to see your schools</Button>
+      return <Button loading={state.isLoading} onClick={() => login()}><Icon type="login" /> Login to see your schools</Button>
     }
     if (state.schools.length === 0) {
       return <div>None of your schools are entitled to use this application</div>

@@ -6,4 +6,5 @@ export const useActions = (state, dispatch) => ({
   setSchool: data => dispatch({ type: types.SET_SCHOOL, payload: data }),
   addPoints: data => dispatch({ type: types.SET_HOUSE_POINTS, payload: data }),
   removePoints: data => dispatch({ type: types.SET_HOUSE_POINTS, payload: data }),
+  loading: isLoading => dispatch({ type: types.LOADING, payload: isLoading }),
 });

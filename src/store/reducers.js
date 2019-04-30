@@ -1,8 +1,8 @@
 const initialState = {
   user: null,
   schools: [],
-  loaded: false,
   school: null,
+  isLoading: false,
 };
 
 const types = {
@@ -10,6 +10,7 @@ const types = {
   SET_USER: 'SET_USER',
   SET_SCHOOL: 'SET_SCHOOL',
   SET_HOUSE_POINTS: 'SET_HOUSE_POINTS',
+  LOADING: 'LOADING',
 };
 
 const reducer = (state = initialState, action) => {
@@ -18,7 +19,7 @@ const reducer = (state = initialState, action) => {
       return { ...initialState };
     }
     case types.SET_USER: {
-      return { ...state, ...action.payload, loaded: true };
+      return { ...state, ...action.payload };
     }
     case types.SET_SCHOOL: {
       return { ...state, school: action.payload };
@@ -28,6 +29,8 @@ const reducer = (state = initialState, action) => {
       school.houses = school.houses.filter(h => h.id !== action.payload.id).concat(action.payload);
       return { ...state, school };
     }
+    case types.LOADING:
+      return { ...state, isLoading: action.payload };
     default:
       return state;
   }
