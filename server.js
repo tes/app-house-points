@@ -7,6 +7,7 @@ const auth = require('./lib/middleware/auth');
 const error = require('./lib/middleware/error');
 const buildFolder = path.resolve(__dirname, 'build');
 const port = process.env.PORT || 3001;
+const secret = process.env.TES_HOUSE_POINTS_SESSION_SECRET || 'alskdjflkajsdflkjsdflk';
 
 const app = express();
 app.set('etag', false);
@@ -14,7 +15,7 @@ app.set('x-powered-by', false);
 app.use(compress());
 app.use(express.static(buildFolder));
 app.use(session({
-  secret: 'keyboard cat',
+  secret,
   resave: false,
   saveUninitialized: true,
   cookie: {
