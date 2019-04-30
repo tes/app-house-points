@@ -6,20 +6,19 @@ import School from './School';
 import './App.css';
 
 class App extends Component {
-
   render() {
     return (
-      <Router>
-        <div>
-          <Header />
-          <div className="App">
-            <div className="page-content">
-              <Route exact path="/" component={Home} />
-              <Route path="/schools/:id" component={School} />
+        <Router>
+          <div>
+            <Header />
+            <div className="App">
+              <div className="page-content">
+                <Route exact path="/" component={Home} />
+                <Route path="/schools/:id" component={School} />
+              </div>
             </div>
           </div>
-        </div>
-      </Router>
+        </Router>
     );
   }
 }

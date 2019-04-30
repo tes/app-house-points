@@ -28,6 +28,7 @@ app.post('/api/points/:schoolId/:houseId', auth.ensureAuthorised, auth.hasEntitl
 app.delete('/api/points/:schoolId/:houseId', auth.ensureAuthorised, auth.hasEntitlement('House Points'), api.subtractHousePoint);
 app.get('/auth/return', auth.return);
 app.get('/auth/login', auth.ensureAuthorised, auth.login);
+app.get('/auth/logout', auth.ensureAuthorised, auth.logout);
 
 app.use('*', function (req, res, next) {
   res.set('content-type', 'text/html');

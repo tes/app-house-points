@@ -1,48 +1,41 @@
-import React, { Component } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Card, Icon, List, Avatar } from 'antd';
+import { Store } from './store';
 import request from './request';
 
-const gridStyle = {
-  width: '100%',
-};
+export default function School(props) {
+  const { state, actions } = useContext(Store);
+  const schoolId = props.match.params.id;
 
-export default class School extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { id: props.match.params.id };
+  useEffect(() => fetchSchool(), []);
+
+  const fetchSchool = () => {
+    request(`/api/schools/${schoolId}`)
+      .then(school => actions.setSchool(school))
+      .catch(console.error);
   }
 
-  componentWillMount() {
-    request(`/api/schools/${this.state.id}`).then(school => {
-      this.setState({ ...school });
-    }).catch(console.error);
+  const addPoints = (item) => {
+    request(`/api/points/${schoolId}/${item.id}`, { method: 'POST' })
+      .then(house => actions.addPoints(house))
+      .catch(err => console.error);
   }
 
-  addPoints(item) {
-    request(`/api/points/${this.state.id}/${item.id}`, { method: 'POST' })
-    .then(house => {
-      this.setState({ houses: this.getHousesState(house) })
-    }).catch(err => console.error);
+  const removePoints = (item) => {
+    request(`/api/points/${schoolId}/${item.id}`, { method: 'DELETE' })
+      .then(house => actions.removePoints(house))
+      .catch(err => console.error);
   }
 
-  removePoints(item) {
-    request(`/api/points/${this.state.id}/${item.id}`, { method: 'DELETE' })
-    .then(house => {
-      this.setState({ houses: this.getHousesState(house) })
-    }).catch(err => console.error);
-  }
+  if (!state.school) return null;
 
-  getHousesState(house) {
-    return this.state.houses.filter(h => h.id !== house.id).concat(house)
-  }
-
-  render() {
-    return (
-      <Card className="schools-points-card" title={<span>{this.state.name}</span>}>
-        <Card.Grid style={gridStyle}>
-          {
-            this.state.houses ? <List
-              dataSource={[...this.state.houses].sort((a, b) => a.order - b.order)}
+  return (
+    <Card className="schools-points-card" title={<span>{state.school.name}</span>}>
+      <Card.Grid style={{width: '100%'}}>
+        {
+          state.school.houses
+          ? <List
+              dataSource={[...state.school.houses].sort((a, b) => a.order - b.order)}
               renderItem={item => (
                 <List.Item key={item.id}>
                   <List.Item.Meta
@@ -55,8 +48,8 @@ export default class School extends Component {
                             <h3><Icon type="star" /> Points: { item.points }</h3>
                           </div>
                           <div className="actions">
-                            <Icon type="plus-circle" onClick={() => this.addPoints(item)} theme="twoTone"/>
-                            <Icon type="minus-circle" onClick={() => this.removePoints(item)} theme="twoTone"/>
+                            <Icon type="plus-circle" onClick={() => addPoints(item)} theme="twoTone"/>
+                            <Icon type="minus-circle" onClick={() => removePoints(item)} theme="twoTone"/>
                           </div>
                         </div>
                       </div>
@@ -64,10 +57,10 @@ export default class School extends Component {
                   />
                 </List.Item>
               )}>
-            </List> : ''
-          }
-        </Card.Grid>
-      </Card>
-    );
-  }
+            </List> 
+          : null
+        }
+      </Card.Grid>
+    </Card>
+  );
 }

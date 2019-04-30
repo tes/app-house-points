@@ -6,6 +6,10 @@
   padding: 20px;
 }
 
+.btn-profile {
+  border: 0;
+}
+
 /* Welcome Page */
 .welcome-card {
   text-align: center;
