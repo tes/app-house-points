@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { Card, List, Button, Icon } from 'antd';
 import { Link } from 'react-router-dom';
-import { Store } from './store';
-import request from './request';
+import { Store } from '../store';
+import request from '../request';
 
 export default function Home() {
   const { state, actions } = useContext(Store);

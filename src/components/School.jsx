@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { Card, Icon, List, Avatar } from 'antd';
-import { Store } from './store';
-import request from './request';
+import { Store } from '../store';
+import request from '../request';
 
 export default function School(props) {
   const { state, actions } = useContext(Store);

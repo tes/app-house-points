@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import { Icon, PageHeader, Menu, Dropdown, Button } from 'antd';
 import { Link, withRouter } from 'react-router-dom';
-import { Store } from './store';
-import request from './request';
+import { Store } from '../store';
+import request from '../request';
 
 export default withRouter((props) => {
   const { state, actions } = useContext(Store);

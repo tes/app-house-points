@@ -4,3 +4,66 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* Header */
+.page-header {
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.page-content {
+  padding: 20px;
+}
+
+.btn-profile {
+  border: 0;
+}
+
+/* Home Page */
+.welcome-card {
+  text-align: center;
+}
+
+.welcome-card h1 {
+  font-size: 2.5em;
+}
+
+.welcome-card h2 {
+  font-size: 2em;
+}
+
+.welcome-card hr {
+  border: 1px solid #f6e58d;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 50%;
+}
+
+.school-list {
+  width: 600px;
+  border: 1px solid #d9d9d9;
+  text-align: left;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* School Page */
+.schools-points {
+  display: flex;
+  justify-content: space-between;
+}
+.schools-points .actions {
+  display: flex;
+}
+.schools-points .actions i {
+  font-size: 22px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.house-title {
+  font-weight: bold;
+  font-size: 22px;
+}
+.house-description {
+  margin-top: 12px;
+}
