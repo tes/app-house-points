@@ -43,13 +43,9 @@ This should start the client side application on http://localhost:3000 (this may
 ### Deployment
 To deploy the application
 ```bash
-### Deployment
-To deploy the application
-```bash
 heroku login # if not already logged in (you will need to be added as a collaborator in Heroku)
 heroku git:remote -a tes-house-points # if not done before
 git push heroku master
-```
 ```
 
 
@@ -57,5 +53,3 @@ git push heroku master
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-CLI test.
