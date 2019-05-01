@@ -1,3 +1,4 @@
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 # House Points
 House Points is a public application for demonstrating how approved 3rd party products can integrate with Tes using [OpenId Connect (OIDC)](https://openid.net/connect/). You can find it running on Heroku at http://tes-house-points.herokuapp.com/.
 
@@ -41,12 +42,14 @@ npm run dev
 This should start the client side application on http://localhost:3000 (this may take a little time) and automatically proxy API and authentication requests to the server running on http://localhost:3001. Both client and server will monitor the filesystem for changes and automatically rebuild.
 
 ### Deployment
-To deploy the application
+To deploy the application either navigate to https://github.com/tes/app-house-points and click the [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy) or enter the following commands...
 ```bash
 heroku login # if not already logged in (you will need to be added as a collaborator in Heroku)
 heroku git:remote -a tes-house-points # if not done before
 git push heroku master
 ```
+
+
 
 
 ## Learn More
