@@ -22,6 +22,7 @@ Other limitations include:
 * [Node.js](https://nodejs.org/en/) v8 or greater
 * OIDC client credentials (ask Tes)
 * Access to the tes.com staging and/or production environments
+* The [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
 
 #### Installation
 ```
@@ -42,8 +43,13 @@ This should start the client side application on http://localhost:3000 (this may
 ### Deployment
 To deploy the application
 ```bash
-heroku login # if not already logged in
+### Deployment
+To deploy the application
+```bash
+heroku login # if not already logged in (you will need to be added as a collaborator in Heroku)
+heroku git:remote -a tes-house-points # if not done before
 git push heroku master
+```
 ```
 
 
