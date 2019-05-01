@@ -13,7 +13,7 @@ The most significant limitation of this demo is that House Points does not have 
 Other limitations include:
 
 * The application assumes that the 3rd party application has a database of schools which have already been associated with tes.com portal accounts via the tes onlineId
-* The application does not confirm the identity of the user if they are already logged on to tes.com 
+* The application does not confirm the identity of the user if they are already logged on to tes.com
 * The application does not honour the OIDC token expiry time
 * The application does not honour the entitlements start / end date
 
@@ -30,7 +30,7 @@ cd app-house-points
 npm install
 ```
 
-#### Starting the application 
+#### Starting the application
 ```
 TES_OIDC_CLIENT_ID=app-house-points \
 TES_OIDC_CLIENT_SECRET=replace-with-real-secret \
@@ -40,7 +40,12 @@ npm run dev
 This should start the client side application on http://localhost:3000 (this may take a little time) and automatically proxy API and authentication requests to the server running on http://localhost:3001. Both client and server will monitor the filesystem for changes and automatically rebuild.
 
 ### Deployment
-The application is automatically deployed to [Heroku](https://www.heroku.com/) when changes are pushed to master.
+To deploy the application
+```bash
+heroku login # if not already logged in
+git push heroku master
+```
+
 
 ## Learn More
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
