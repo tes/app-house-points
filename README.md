@@ -1,4 +1,3 @@
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 # House Points
 House Points is a public application for demonstrating how approved 3rd party products can integrate with Tes using [OpenId Connect (OIDC)](https://openid.net/connect/). You can find it running on Heroku at http://tes-house-points.herokuapp.com/.
 
