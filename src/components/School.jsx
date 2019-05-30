@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { Card, Icon, List, Avatar } from 'antd';
 import { Store } from '../store';
 import request from '../request';
+import { mzClick, PAGE_TYPES, mzView } from '../lib/analytics';
 
 export default function School(props) {
   const { state, actions } = useContext(Store);
@@ -11,20 +12,32 @@ export default function School(props) {
 
   const fetchSchool = () => {
     request(`/api/schools/${schoolId}`)
-      .then(school => actions.setSchool(school))
+      .then(school => {
+        actions.setSchool(school);
+        return school;
+      })
+      .then((school) => mzView({ type: PAGE_TYPES.housePoints, school }))
       .catch(console.error);
   }
 
   const addPoints = (item) => {
     request(`/api/points/${schoolId}/${item.id}`, { method: 'POST' })
-      .then(house => actions.addPoints(house))
-      .catch(err => console.error);
+    .then(house => {
+      actions.addPoints(house);
+      return house;
+    })
+    .then((house) => mzClick({ title: `${house.id}-upvote`}))
+    .catch(console.error);
   }
 
   const removePoints = (item) => {
     request(`/api/points/${schoolId}/${item.id}`, { method: 'DELETE' })
-      .then(house => actions.removePoints(house))
-      .catch(err => console.error);
+      .then(house => {
+        actions.removePoints(house);
+        return house;
+      })
+      .then((house) => mzClick({ title: `${house.id}-downvote`}))
+      .catch(console.error);
   }
 
   if (!state.school) return null;
@@ -57,7 +70,7 @@ export default function School(props) {
                   />
                 </List.Item>
               )}>
-            </List> 
+            </List>
           : null
         }
       </Card.Grid>

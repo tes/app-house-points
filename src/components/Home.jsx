@@ -3,21 +3,25 @@ import { Card, List, Button, Icon } from 'antd';
 import { Link } from 'react-router-dom';
 import { Store } from '../store';
 import request from '../request';
+import { mzView, PAGE_TYPES } from '../lib/analytics';
 
 export default function Home() {
   const { state, actions } = useContext(Store);
- 
+
   const login = (e) => {
     actions.loading(true);
     request('/auth/login')
-      .catch((err) => console.log(err))
+      .catch((err) => console.error(err))
       .finally(() => actions.loading(false));
   }
 
   const renderSchools = () => {
+    state.user ? mzView({ type: PAGE_TYPES.schoolChooser }) : mzView({ type: PAGE_TYPES.landing });
+
     if (!state.user) {
       return <Button loading={state.isLoading} onClick={() => login()}><Icon type="login" /> Login to see your schools</Button>
     }
+
     if (state.schools.length === 0) {
       return <div>None of your schools are entitled to use this application</div>
     }

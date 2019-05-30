@@ -3,6 +3,7 @@ import { Icon, PageHeader, Menu, Dropdown, Button } from 'antd';
 import { Link, withRouter } from 'react-router-dom';
 import { Store } from '../store';
 import request from '../request';
+import { mzUserMetaData } from '../lib/analytics';
 
 export default withRouter((props) => {
   const { state, actions } = useContext(Store);
@@ -11,15 +12,18 @@ export default withRouter((props) => {
 
   const fetchUser = () => {
     request('/api/user')
-      .then(data => actions.setUser(data))
-      .catch(console.log);
+      .then(data => {
+        actions.setUser(data);
+        return data;
+      }).then(data => mzUserMetaData({ user: data.user }))
+      .catch(console.error);
   }
 
   const logout = () => {
     request('/auth/logout')
       .then(data => actions.logout(data))
       .then(() => props.history.push('/'))
-      .catch(console.log);
+      .catch(console.error);
   }
 
   return (
@@ -31,7 +35,7 @@ export default withRouter((props) => {
       className="page-header"
       title="House Points"
       subTitle=""
-      extra={state.user 
+      extra={state.user
         ? <Dropdown
             placement="bottomCenter"
             overlay={
