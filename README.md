@@ -42,7 +42,7 @@ npm run dev
 This should start the client side application on http://localhost:3000 (this may take a little time) and automatically proxy API and authentication requests to the server running on http://localhost:3001. Both client and server will monitor the filesystem for changes and automatically rebuild.
 
 ### Deployment
-To deploy the application either navigate to https://github.com/tes/app-house-points and click the [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy) or enter the following commands...
+To deploy the application either navigate to enter the following commands...
 ```bash
 heroku login # if not already logged in (you will need to be added as a collaborator in Heroku)
 heroku git:remote -a tes-house-points # if not done before
@@ -61,7 +61,7 @@ A web tracking strategy should be agreed between the 3rd party and Tes before ad
 
 Before adding mz to the 3rd party site a number of steps need to be performed by Tes for setup.
 
-1) Ensure the 3rd party site domain is added to the [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) list in service-event-tracking.
+1) Ensure the 3rd party site domain is added to the [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) list in Tes' event tracking service
 2) The Tes data team have created a new data stream split for the 3rd party site (TBC).
 3) As specified above a tracking strategy has been agreed between the 3rd party and Tes product / data.
 
